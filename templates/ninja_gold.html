@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ninja_gold.css') }}">
+</head>
+<body>
+<div id='wrapper'>
+<h4>Your Gold:{{session['gold']}}</h4>
+	<div class='box'>
+	<h5>Farm</h5>
+	<p>(earns 10-20 gold)</p>
+		<form action="/process_money" method="post"><input type="hidden" name="building" value="farm">
+	<button>Find Gold!</button>
+	</form>
+	</div><!-- End of farm -->
+
+	<div class='box'>
+	<h5>Cave</h5>
+	<p>(earns 5-10 gold)</p>
+		<form action="/process_money" method="post"><input type="hidden" name="building" value="cave">
+	<button>Find Gold!</button>
+	</form>
+	</div><!-- End of cave -->
+	
+	<div class='box'>
+	<h5>House</h5>
+	<p>(earns 2-5 gold)</p>
+		<form action="/process_money" method="post"><input type="hidden" name="building" value="house">
+	<button>Find Gold!</button>
+	</form>
+	</div><!-- End of house -->
+	
+	<div class='box'>
+	<h5>Casino</h5>
+	<p>(earns/takes 0-50 gold)</p>
+		<form action="/process_money" method="post"><input type="hidden" name="building" value="casino">
+	<button>Find Gold!</button>
+	</form>
+	</div><!-- End of casino -->
+
+	<h4>Activities:</h4>
+	<div id='log'>
+		{% for x in session['log'] %}
+			<p>{{x}}</p>
+		{% endfor %}
+	</div><!-- End of log -->
+	<form action='/reset'>
+	<button>Reset the Number</button>
+	</form>
+
+</div><!--  End of wrapper -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+*{
+	font-family: verdana;
+}
+
+#wrapper{
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.box {
+	width:20%;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	border:1px solid DarkGray;
+	display: inline-block;
+	text-align: center;
+	vertical-align: center;
+	border-radius: 5px;
+}
+#log {
+	width: 820px;
+	height: 200px;
+	border-radius: 5px;
+	border: 1px solid black;
+	overflow: scroll;
+}
